@@ -17,8 +17,11 @@ public class SceneLoader : MonoBehaviour {
         FindObjectOfType<GameSession>().ResetGame();
     }
 
-    public void QuitGame()
+    
+
+	// This is the button that exits the game when triggered
+	public void QuitGame()
     {
-        Application.Quit();
+	        Application.Quit();
     }
 }
