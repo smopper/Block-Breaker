@@ -7,21 +7,20 @@ public class LoseCollider : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
- 
-        if (tries == 0)
-        {
+​
+        if (tries == 0) {
             SceneManager.LoadScene("Game Over");
             tries = 3;
-            currentScore = 0;
-            scoreText.text = "Score: " + currentScore.ToString();
         }
-        else
-        {
+        
+        else {
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(currentSceneIndex);
             tries--;
             currentScore -= pointsPerBlockDestroyed;
-            scoreText.text = "Score: " + currentScore.ToString();
+            scoreText.text = currentScore.ToString();
+​
+        }
+        
     }
-
 }
