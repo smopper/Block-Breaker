@@ -35,7 +35,7 @@ public class Ball : MonoBehaviour {
         }
     }
 
-    private void LaunchOnMouseClick()
+    public void LaunchOnMouseClick()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -44,7 +44,7 @@ public class Ball : MonoBehaviour {
         }
     }
 
-    private void LockBallToPaddle()
+    public void LockBallToPaddle()
     {
         Vector2 paddlePos = new Vector2(paddle1.transform.position.x, paddle1.transform.position.y);
         transform.position = paddlePos + paddleToBallVector;
