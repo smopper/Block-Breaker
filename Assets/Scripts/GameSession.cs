@@ -35,9 +35,24 @@ public class GameSession : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        Time.timeScale = gameSpeed;
-	}
-
+        gamePause();
+    }
+    public void gamePause(){
+​
+​
+        if(!gamePaused){
+            Time.timeScale = gameSpeed;
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if(!gamePaused){
+                Time.timeScale = 0f;
+                gamePaused = true;
+            }else{
+                gamePaused = false;
+            }
+        }
+    }
     public void AddToScore()
     {
         currentScore += pointsPerBlockDestroyed;
